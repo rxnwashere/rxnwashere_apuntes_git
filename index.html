@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>🧠 Apuntes de Git y GitHub</title>
+<title>README.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -461,12 +461,14 @@ git checkout &lt;nombre&gt;
 git switch -c &lt;nombre&gt;           <span class="hljs-comment"># Crear y cambiar a la vez</span>
 git checkout -b &lt;nombre&gt;
 
-git merge &lt;nombre&gt;               <span class="hljs-comment"># Fusionar una rama con la actual</span>
+git merge &lt;nombre&gt;               <span class="hljs-comment"># Fusionar una rama con la actual. No genera commit de merge, solo mueve el puntero de la rama hacia delante</span>
+git merge &lt;nombre&gt; --no-ff       <span class="hljs-comment"># Fusiona una rama con la actual pero forzando dejar un commit de merge. --no-ff significa "No fast forward".</span>
+git merge &lt;nombre&gt; --allow-unrelated-histories <span class="hljs-comment"># Fusionar una rama sin cambios relacionados con la actual</span>
 git branch -d &lt;nombre&gt;           <span class="hljs-comment"># Borrar una rama</span>
 </div></code></pre>
 <hr>
 <h2 id="%E2%98%81%EF%B8%8F-remotos-github-y-otros">☁️ Remotos (GitHub y otros)</h2>
-<pre class="hljs"><code><div>git remote add origin &lt;URL&gt;      <span class="hljs-comment"># Conectar el repo local a uno remoto</span>
+<pre class="hljs"><code><div>git remote add origin &lt;URL HTTP&gt; / &lt;URL SSH&gt; <span class="hljs-comment"># Conectar el repo local a uno remoto</span>
 git remote -v                    <span class="hljs-comment"># Ver los remotos configurados</span>
 git push                         <span class="hljs-comment"># Subir cambios</span>
 git pull                         <span class="hljs-comment"># Bajar y fusionar cambios</span>
@@ -500,6 +502,22 @@ git commit -m <span class="hljs-string">"Añadida nueva funcionalidad"</span>
 git push origin feature/nueva-funcionalidad
 <span class="hljs-comment"># Crear Pull Request en GitHub</span>
 </div></code></pre>
+<p><strong>EJEMPLO DE PULL REQUEST:</strong></p>
+<p>Cuando entremos a nuestro repositorio desde GitHub a la nueva rama veremos un aviso que nos informará sobre los commits por delante o por detrás que está respecto a <code>main</code>, para este ejemplo estará un commit por delante.</p>
+<p>También veremos una notificación avisando de las ramas que han tenido pushes recientemente:</p>
+<p><img src="imgs/pullreq1.png" alt="Notificación sobre pushes recientes y commits adelantados"></p>
+<p>Presionaremos <code>Compare &amp; Pull Request</code> para comprobar los cambios y fusionar ambas ramas:</p>
+<p><img src="imgs/pullreq2.png.png" alt="Cambios entre ficheros"></p>
+<p>Añadimos un nombre a nuestra request (puede coger el nombre de nuestro último commit en la rama a fusionar):</p>
+<p><img src="imgs/pullreq3.png" alt="Título para nuestro pull request sin problemas de fusión"></p>
+<p>Si nos fijamos arriba podremos observar que nos informa que está listo para fusionar automáticamente debido a que no hay conflictos
+(<code>Able to merge</code>)</p>
+<p>Al abrir la pull request si no hay conflictos como en este caso podremos hacer un <code>merge</code> con main:</p>
+<p><img src="imgs/pullreq4.png" alt="Pull y merge request. No hay conflictos entre ramas"></p>
+<p><img src="imgs/pullreq5.png" alt="Confirmación de merge request"></p>
+<p>Cuando se fusione, la pull request será cerrada y podremos eliminar la rama si lo deseamos:</p>
+<p><img src="imgs/pullreq6.png" alt="Pull request exitosa"></p>
+<p><img src="imgs/pullreq7.png" alt="Cambios después del merge"></p>
 <hr>
 <h2 id="%F0%9F%A7%B0-comandos-%C3%BAtiles">🧰 Comandos útiles</h2>
 <pre class="hljs"><code><div>git <span class="hljs-built_in">log</span> --oneline                <span class="hljs-comment"># Ver historial corto</span>
@@ -511,7 +529,9 @@ git clean -f                     <span class="hljs-comment"># Borrar archivos no
 <pre class="hljs"><code><div>ssh-keygen -t ed25519 -C <span class="hljs-string">"tuemail@example.com"</span>
 cat ~/.ssh/id_ed25519.pub
 </div></code></pre>
-<p>Luego añades el contenido de la clave a una nueva desde GitHub</p>
+<p>Luego añades el contenido de la clave a una nueva desde GitHub, podrás encontrar el menú en:</p>
+<p><img src="https://github.com/settings/keys" alt="Settings (configuración de tu cuenta de GitHub) --&gt; SSH and GPG Keys"></p>
+<p><img src="imgs/sshkeys.png" alt="Menú para añadir clave SSH pública"></p>
 <hr>
 <h2 id="%F0%9F%93%9A-recursos-recomendados">📚 Recursos recomendados</h2>
 <ul>
