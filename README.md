@@ -1,4 +1,4 @@
-![# 🧠 Apuntes de **Git** y **GitHub**](https://rxnwashere.github.io/rxnwashere_apuntes_git/)
+<a href="https://rxnwashere.github.io/rxnwashere_apuntes_git/"><h1>🧠 Apuntes de **Git** y **GitHub**</h1></a>
 
 ## 🧩 ¿Qué es Git?
 **Git** es un sistema de control de versiones distribuido.  
