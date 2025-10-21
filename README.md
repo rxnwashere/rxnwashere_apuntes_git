@@ -111,8 +111,8 @@ git checkout <nombre>
 git switch -c <nombre>           # Crear y cambiar a la vez
 git checkout -b <nombre>
 
-git merge <nombre>               # Fusionar una rama con la actual
-git merge <nombre> --no-ff       # Fusiona una rama con la actual pero forzando dejar un commit de merge
+git merge <nombre>               # Fusionar una rama con la actual. No genera commit de merge, solo mueve el puntero de la rama hacia delante
+git merge <nombre> --no-ff       # Fusiona una rama con la actual pero forzando dejar un commit de merge. --no-ff significa "No fast forward".
 git merge <nombre> --allow-unrelated-histories # Fusionar una rama sin cambios relacionados con la actual
 git branch -d <nombre>           # Borrar una rama
 ```
@@ -169,6 +169,37 @@ git push origin feature/nueva-funcionalidad
 # Crear Pull Request en GitHub
 ```
 
+**EJEMPLO DE PULL REQUEST:**
+
+Cuando entremos a nuestro repositorio desde GitHub a la nueva rama veremos un aviso que nos informará sobre los commits por delante o por detrás que está respecto a <code>main</code>, para este ejemplo estará un commit por delante.
+
+También veremos una notificación avisando de las ramas que han tenido pushes recientemente:
+
+![Notificación sobre pushes recientes y commits adelantados](imgs/pullreq1.png)
+
+Presionaremos <code>Compare & Pull Request</code> para comprobar los cambios y fusionar ambas ramas:
+
+![Cambios entre ficheros](imgs/pullreq2.png.png)
+
+Añadimos un nombre a nuestra request (puede coger el nombre de nuestro último commit en la rama a fusionar):
+
+![Título para nuestro pull request sin problemas de fusión](imgs/pullreq3.png)
+
+Si nos fijamos arriba podremos observar que nos informa que está listo para fusionar automáticamente debido a que no hay conflictos 
+(<code>Able to merge</code>)
+
+Al abrir la pull request si no hay conflictos como en este caso podremos hacer un <code>merge</code> con main:
+
+![Pull y merge request. No hay conflictos entre ramas](imgs/pullreq4.png)
+
+![Confirmación de merge request](imgs/pullreq5.png)
+
+Cuando se fusione, la pull request será cerrada y podremos eliminar la rama si lo deseamos:
+
+![Pull request exitosa](imgs/pullreq6.png)
+
+![Cambios después del merge](imgs/pullreq7.png)
+
 ---
 
 ## 🧰 Comandos útiles
@@ -190,7 +221,7 @@ cat ~/.ssh/id_ed25519.pub
 
 Luego añades el contenido de la clave a una nueva desde GitHub, podrás encontrar el menú en:
 
-<code>Settings</code> (configuración de tu cuenta de GitHub) --> <code>SSH and GPG Keys</code>
+![<code>Settings</code> (configuración de tu cuenta de GitHub) --> <code>SSH and GPG Keys</code>](https://github.com/settings/keys)
 
 ![Menú para añadir clave SSH pública](imgs/sshkeys.png)
 
