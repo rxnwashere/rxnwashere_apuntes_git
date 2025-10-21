@@ -186,7 +186,7 @@ ssh-keygen -t ed25519 -C "tuemail@example.com"
 cat ~/.ssh/id_ed25519.pub
 ```
 
-Luego añades el contenido a de la clave a una nueva desde GitHub
+Luego añades el contenido de la clave a una nueva desde GitHub
 
 ---
 
