@@ -112,6 +112,8 @@ git switch -c <nombre>           # Crear y cambiar a la vez
 git checkout -b <nombre>
 
 git merge <nombre>               # Fusionar una rama con la actual
+git merge <nombre> --no-ff       # Fusiona una rama con la actual pero forzando dejar un commit de merge
+git merge <nombre> --allow-unrelated-histories # Fusionar una rama sin cambios relacionados con la actual
 git branch -d <nombre>           # Borrar una rama
 ```
 
@@ -120,7 +122,7 @@ git branch -d <nombre>           # Borrar una rama
 ## ☁️ Remotos (GitHub y otros)
 
 ```bash
-git remote add origin <URL>      # Conectar el repo local a uno remoto
+git remote add origin <URL HTTP> / <URL SSH> # Conectar el repo local a uno remoto
 git remote -v                    # Ver los remotos configurados
 git push                         # Subir cambios
 git pull                         # Bajar y fusionar cambios
@@ -186,7 +188,11 @@ ssh-keygen -t ed25519 -C "tuemail@example.com"
 cat ~/.ssh/id_ed25519.pub
 ```
 
-Luego añades el contenido de la clave a una nueva desde GitHub
+Luego añades el contenido de la clave a una nueva desde GitHub, podrás encontrar el menú en:
+
+<code>Settings</code> (configuración de tu cuenta de GitHub) --> <code>SSH and GPG Keys</code>
+
+![Menú para añadir clave SSH pública](imgs/sshkeys.png)
 
 ---
 
