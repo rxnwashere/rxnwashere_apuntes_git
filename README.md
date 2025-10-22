@@ -2,33 +2,36 @@
 
 ## 📑 Contenidos
 
-1. [🧩 ¿Qué es Git?](#qué-es-git)  
+1. [🧩 ¿Qué es Git?](#que-es-git)  
 2. [🔄 Ciclo de vida de los archivos en Git](#ciclo-de-vida-de-los-archivos-en-git)  
    - [📊 Fases principales](#fases-principales)  
-3. [⚙️ Configuración inicial](#configuración-inicial)  
+3. [⚙️ Configuración inicial](#configuracion-inicial)  
 4. [🗂️ Crear y gestionar repositorios](#crear-y-gestionar-repositorios)  
 5. [📁 Flujo de trabajo completo](#flujo-de-trabajo-completo)  
-   - [1️⃣ Working Directory → Staging Area](#1️⃣-working-directory--staging-area)  
-   - [2️⃣ Staging Area → Repository (commit)](#2️⃣-staging-area--repository-commit)  
-   - [3️⃣ Repository → Remote Repository](#3️⃣-repository--remote-repository)  
-   - [4️⃣ Remote Repository → Repository](#4️⃣-remote-repository--repository)  
+   - [1️⃣ Working Directory → Staging Area](#working-directory--staging-area)  
+   - [2️⃣ Staging Area → Repository (commit)](#staging-area--repository-commit)  
+   - [3️⃣ Repository → Remote Repository](#repository--remote-repository)  
+   - [4️⃣ Remote Repository → Repository](#remote-repository--repository)  
 6. [🪄 Modificar y deshacer cambios](#modificar-y-deshacer-cambios)  
 7. [🌿 Ramas (branches)](#ramas-branches)  
 8. [☁️ Remotos (GitHub y otros)](#remotos-github-y-otros)  
 9. [🔍 Comparar y revisar cambios](#comparar-y-revisar-cambios)  
 10. [🔧 Ignorar archivos](#ignorar-archivos)  
 11. [💡 Flujo de trabajo típico](#flujo-de-trabajo-típico)  
-12. [🧰 Comandos útiles](#comandos-útiles)  
+12. [🧰 Comandos útiles](#comandos-utiles)  
 13. [🔐 SSH con GitHub](#ssh-con-github)  
 14. [📚 Recursos recomendados](#recursos-recomendados)
 
+---
 
+<a id="que-es-git"></a>
 ## 🧩 ¿Qué es Git?
 **Git** es un sistema de control de versiones distribuido.  
 Permite registrar los cambios realizados en un proyecto, volver a versiones anteriores, trabajar en equipo y fusionar código fácilmente.
 
 ---
 
+<a id="ciclo-de-vida-de-los-archivos-en-git"></a>
 ## 🔄 Ciclo de vida de los archivos en Git
 
 Git maneja **cuatro estados principales** en los que puede estar un archivo:
@@ -40,6 +43,7 @@ Git maneja **cuatro estados principales** en los que puede estar un archivo:
 | **Staged** | El archivo ha sido preparado para el siguiente commit (`git add`). |
 | **Committed** | El archivo ya está guardado en la base de datos de Git (`git commit`). |
 
+<a id="fases-principales"></a>
 ### 📊 Fases principales
 
 ```
@@ -53,6 +57,7 @@ Git maneja **cuatro estados principales** en los que puede estar un archivo:
 
 ---
 
+<a id="configuracion-inicial"></a>
 ## ⚙️ Configuración inicial
 
 ```bash
@@ -65,6 +70,7 @@ git config --global core.editor "nano" # Configurar editor por defecto (cambia n
 
 ---
 
+<a id="crear-y-gestionar-repositorios"></a>
 ## 🗂️ Crear y gestionar repositorios
 
 ```bash
@@ -74,8 +80,10 @@ git clone <URL>               # Clona un repositorio existente (de GitHub u otro
 
 ---
 
+<a id="flujo-de-trabajo-completo"></a>
 ## 📁 Flujo de trabajo completo
 
+<a id="working-directory--staging-area"></a>
 ### 1️⃣ Working Directory → Staging Area
 Añadimos archivos a la zona de preparación.
 
@@ -85,6 +93,7 @@ git add .                     # Añadir todos los cambios
 git status                    # Ver el estado actual de los archivos en el repositorio
 ```
 
+<a id="staging-area--repository-commit"></a>
 ### 2️⃣ Staging Area → Repository (commit)
 Guardamos los cambios en la base de datos local de Git.
 
@@ -92,6 +101,7 @@ Guardamos los cambios en la base de datos local de Git.
 git commit -m "Mensaje del commit"   # Confirmar los cambios preparados. También podemos hacer git commit sin el parámetro -m, pero en lugar de hacer el commit con el mensaje directamente nos abrirá el editor por defecto que hayamos configurado.
 ```
 
+<a id="repository--remote-repository"></a>
 ### 3️⃣ Repository → Remote Repository
 Subimos nuestros commits al servidor remoto (GitHub).
 
@@ -100,6 +110,7 @@ git push origin main                 # Subir cambios a la rama main
 git push --set-upstream origin main  # Primera vez, vincula la rama local con la remota
 ```
 
+<a id="remote-repository--repository"></a>
 ### 4️⃣ Remote Repository → Repository
 Descargamos o actualizamos los cambios remotos.
 
@@ -113,10 +124,9 @@ En caso que el repositorio remoto este "1 commit behind" del repositorio local (
 ```bash
 origin/main:  A --- B --- C   # Commits repositorio remoto
 local/main:   A --- B --- D   # Commits repositorio local
-
 ```
 
-Si hacemos "git pull" git no va a preguntar como queremos fusionar los cambios, tenemos dos opciones:
+Si hacemos "git pull" git no va a preguntar cómo queremos fusionar los cambios, tenemos dos opciones:
 
 1 - Crear un "merge commit" que combina el repositorio local con el repositorio remoto. 
 
@@ -126,25 +136,24 @@ git pull --no-rebase
           D         # Commits repositorio local
          /
 A --- B --- C       # Commits repositorio remoto
-         \
-          M  (merge commit)  # Nuevo merge commit
-
+                   M  (merge commit)  # Nuevo merge commit
 ```
-**Pros**: No se modifican los commits, seguro para brancas compartidas.  
-**Cons**: Crea "merge commits" adicionales, el historial puede parecer mas caotico.
 
-2 - Git fusiona los cambios i crea un nuevo commit, haciendo el historial linear.
+**Pros**: No se modifican los commits, seguro para ramas compartidas.  
+**Cons**: Crea "merge commits" adicionales, el historial puede parecer más caótico.
 
-```
+2 - Git fusiona los cambios y crea un nuevo commit, haciendo el historial lineal.
+
+```bash
 git pull --rebase
 
 A --- B --- C --- D'    # D' es el commit local, "rebased" con C
-
 ```
-**Pros**: Limpio, historial linear, facil de leer.  
-**Cons**: Reescribe los ID's de los commits, no es seguro para brancas compartidas. 
 
-Si no queremos que git nos avise cada vez que nos encontramos en esta situacion, podemos configurar el comportamiento por defecto:
+**Pros**: Limpio, historial lineal, fácil de leer.  
+**Cons**: Reescribe los ID's de los commits, no es seguro para ramas compartidas. 
+
+Si no queremos que git nos avise cada vez que nos encontramos en esta situación, podemos configurar el comportamiento por defecto:
 
 ```bash
 git config pull.rebase false   # Hacer siempre merge
@@ -153,6 +162,7 @@ git config pull.rebase true    # Hacer siempre rebase
 
 ---
 
+<a id="modificar-y-deshacer-cambios"></a>
 ## 🪄 Modificar y deshacer cambios
 
 ```bash
@@ -164,6 +174,7 @@ git reset --hard <id_commit>     # Volver el repo a un commit anterior (borra ca
 
 ---
 
+<a id="ramas-branches"></a>
 ## 🌿 Ramas (branches)
 
 ```bash
@@ -185,6 +196,7 @@ git branch -d <nombre>           # Borrar una rama
 
 ---
 
+<a id="remotos-github-y-otros"></a>
 ## ☁️ Remotos (GitHub y otros)
 
 ```bash
@@ -197,6 +209,7 @@ git fetch                        # Descargar sin fusionar
 
 ---
 
+<a id="comparar-y-revisar-cambios"></a>
 ## 🔍 Comparar y revisar cambios
 
 ```bash
@@ -208,6 +221,7 @@ git blame <archivo>              # Ver quién cambió cada línea
 
 ---
 
+<a id="ignorar-archivos"></a>
 ## 🔧 Ignorar archivos
 
 Archivo `.gitignore`:
@@ -223,6 +237,7 @@ dist/
 
 ---
 
+<a id="flujo-de-trabajo-típico"></a>
 ## 💡 Flujo de trabajo típico
 
 ```bash
@@ -268,6 +283,7 @@ Cuando se fusione, la pull request será cerrada y podremos eliminar la rama si 
 
 ---
 
+<a id="comandos-utiles"></a>
 ## 🧰 Comandos útiles
 
 ```bash
@@ -278,6 +294,7 @@ git clean -f                     # Borrar archivos no rastreados
 
 ---
 
+<a id="ssh-con-github"></a>
 ## 🔐 SSH con GitHub
 
 ```bash
@@ -293,6 +310,7 @@ Luego añades el contenido de la clave a una nueva desde GitHub, podrás encontr
 
 ---
 
+<a id="recursos-recomendados"></a>
 ## 📚 Recursos recomendados
 
 - [Pro Git Book (en español)](https://git-scm.com/book/es/v2)
