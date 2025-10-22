@@ -121,6 +121,12 @@ A --- B --- C --- D'    # D' es el commit local, "rebased" con C
 **Pros**: Limpio, historial linear, facil de leer.  
 **Cons**: Reescribe los ID's de los commits, no es seguro para brancas compartidas. 
 
+Si no queremos que git nos avise cada vez que nos encontramos en esta situacion, podemos configurar el comportamiento por defecto:
+
+```bash
+git config pull.rebase false   # Hacer siempre merge
+git config pull.rebase true    # Hacer siempre rebase
+```
 
 ---
 
