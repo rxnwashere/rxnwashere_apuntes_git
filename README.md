@@ -85,6 +85,43 @@ git pull origin main                 # Descargar y fusionar cambios
 git fetch                            # Descargar sin fusionar (solo actualiza la info remota)
 ```
 
+En caso que el repositorio remoto este "1 commit behind" del repositorio local (Siguiente ejemplo);
+
+```bash
+origin/main:  A --- B --- C   # Commits repositorio remoto
+local/main:   A --- B --- D   # Commits repositorio local
+
+```
+
+Si hacemos "git pull" git no va a preguntar como queremos fusionar los cambios, tenemos dos opciones:
+
+1 - Crear un "merge commit" que combina el repositorio local con el repositorio remoto. 
+
+```bash
+git pull --no-rebase
+
+          D         # Commits repositorio local
+         /
+A --- B --- C       # Commits repositorio remoto
+         \
+          M  (merge commit)  # Nuevo merge commit
+
+```
+**Pros**: No se modifican los commits, seguro para brancas compartidas.  
+**Cons**: Crea "merge commits" adicionales, el historial puede parecer mas caotico.
+
+2 - Git fusiona los cambios i crea un nuevo commit, haciendo el historial linear.
+
+```
+git pull --rebase
+
+A --- B --- C --- D'    # D' es el commit local, "rebased" con C
+
+```
+**Pros**: Limpio, historial linear, facil de leer.  
+**Cons**: Reescribe los ID's de los commits, no es seguro para brancas compartidas. 
+
+
 ---
 
 ## 🪄 Modificar y deshacer cambios
