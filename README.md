@@ -2,25 +2,26 @@
 
 ## 📑 Contenidos
 
-1. [🧩 ¿Qué es Git?](#🧩-qué-es-git)  
-2. [🔄 Ciclo de vida de los archivos en Git](#🔄-ciclo-de-vida-de-los-archivos-en-git)  
-   - [📊 Fases principales](#📊-fases-principales)  
-3. [⚙️ Configuración inicial](#⚙️-configuración-inicial)  
-4. [🗂️ Crear y gestionar repositorios](#🗂️-crear-y-gestionar-repositorios)  
-5. [📁 Flujo de trabajo completo](#📁-flujo-de-trabajo-completo)  
+1. [🧩 ¿Qué es Git?](#qué-es-git)  
+2. [🔄 Ciclo de vida de los archivos en Git](#ciclo-de-vida-de-los-archivos-en-git)  
+   - [📊 Fases principales](#fases-principales)  
+3. [⚙️ Configuración inicial](#configuración-inicial)  
+4. [🗂️ Crear y gestionar repositorios](#crear-y-gestionar-repositorios)  
+5. [📁 Flujo de trabajo completo](#flujo-de-trabajo-completo)  
    - [1️⃣ Working Directory → Staging Area](#1️⃣-working-directory--staging-area)  
    - [2️⃣ Staging Area → Repository (commit)](#2️⃣-staging-area--repository-commit)  
    - [3️⃣ Repository → Remote Repository](#3️⃣-repository--remote-repository)  
    - [4️⃣ Remote Repository → Repository](#4️⃣-remote-repository--repository)  
-6. [🪄 Modificar y deshacer cambios](#🪄-modificar-y-deshacer-cambios)  
-7. [🌿 Ramas (branches)](#🌿-ramas-branches)  
-8. [☁️ Remotos (GitHub y otros)](#☁️-remotos-github-y-otros)  
-9. [🔍 Comparar y revisar cambios](#🔍-comparar-y-revisar-cambios)  
-10. [🔧 Ignorar archivos](#🔧-ignorar-archivos)  
-11. [💡 Flujo de trabajo típico](#💡-flujo-de-trabajo-típico)  
-12. [🧰 Comandos útiles](#🧰-comandos-útiles)  
-13. [🔐 SSH con GitHub](#🔐-ssh-con-github)  
-14. [📚 Recursos recomendados](#📚-recursos-recomendados)
+6. [🪄 Modificar y deshacer cambios](#modificar-y-deshacer-cambios)  
+7. [🌿 Ramas (branches)](#ramas-branches)  
+8. [☁️ Remotos (GitHub y otros)](#remotos-github-y-otros)  
+9. [🔍 Comparar y revisar cambios](#comparar-y-revisar-cambios)  
+10. [🔧 Ignorar archivos](#ignorar-archivos)  
+11. [💡 Flujo de trabajo típico](#flujo-de-trabajo-típico)  
+12. [🧰 Comandos útiles](#comandos-útiles)  
+13. [🔐 SSH con GitHub](#ssh-con-github)  
+14. [📚 Recursos recomendados](#recursos-recomendados)
+
 
 ## 🧩 ¿Qué es Git?
 **Git** es un sistema de control de versiones distribuido.  
