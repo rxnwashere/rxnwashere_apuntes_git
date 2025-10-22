@@ -365,7 +365,7 @@ code {
           : 'default'
     });
   </script>
-<h1 id="%F0%9F%A7%A0-apuntes-de-git-y-github">🧠 Apuntes de <strong>Git</strong> y <strong>GitHub</strong></h1>
+<h1 id="%F0%9F%A7%A0-apuntes-de-git-y-github"><a href="https://rxnwashere.github.io/rxnwashere_apuntes_git/">🧠 Apuntes de <strong>Git</strong> y <strong>GitHub</strong></a></h1>
 <h2 id="%F0%9F%A7%A9-%C2%BFqu%C3%A9-es-git">🧩 ¿Qué es Git?</h2>
 <p><strong>Git</strong> es un sistema de control de versiones distribuido.<br>
 Permite registrar los cambios realizados en un proyecto, volver a versiones anteriores, trabajar en equipo y fusionar código fácilmente.</p>
@@ -441,6 +441,36 @@ git push --<span class="hljs-built_in">set</span>-upstream origin main  <span cl
 <p>Descargamos o actualizamos los cambios remotos.</p>
 <pre class="hljs"><code><div>git pull origin main                 <span class="hljs-comment"># Descargar y fusionar cambios</span>
 git fetch                            <span class="hljs-comment"># Descargar sin fusionar (solo actualiza la info remota)</span>
+</div></code></pre>
+<p>En caso que el repositorio remoto este &quot;1 commit behind&quot; del repositorio local (Siguiente ejemplo);</p>
+<pre class="hljs"><code><div>origin/main:  A --- B --- C   <span class="hljs-comment"># Commits repositorio remoto</span>
+<span class="hljs-built_in">local</span>/main:   A --- B --- D   <span class="hljs-comment"># Commits repositorio local</span>
+
+</div></code></pre>
+<p>Si hacemos &quot;git pull&quot; git no va a preguntar como queremos fusionar los cambios, tenemos dos opciones:</p>
+<p>1 - Crear un &quot;merge commit&quot; que combina el repositorio local con el repositorio remoto.</p>
+<pre class="hljs"><code><div>git pull --no-rebase
+
+          D         <span class="hljs-comment"># Commits repositorio local</span>
+         /
+A --- B --- C       <span class="hljs-comment"># Commits repositorio remoto</span>
+         \
+          M  (merge commit)  <span class="hljs-comment"># Nuevo merge commit</span>
+
+</div></code></pre>
+<p><strong>Pros</strong>: No se modifican los commits, seguro para brancas compartidas.<br>
+<strong>Cons</strong>: Crea &quot;merge commits&quot; adicionales, el historial puede parecer mas caotico.</p>
+<p>2 - Git fusiona los cambios i crea un nuevo commit, haciendo el historial linear.</p>
+<pre class="hljs"><code><div>git pull --rebase
+
+A --- B --- C --- D'    # D' es el commit local, &quot;rebased&quot; con C
+
+</div></code></pre>
+<p><strong>Pros</strong>: Limpio, historial linear, facil de leer.<br>
+<strong>Cons</strong>: Reescribe los ID's de los commits, no es seguro para brancas compartidas.</p>
+<p>Si no queremos que git nos avise cada vez que nos encontramos en esta situacion, podemos configurar el comportamiento por defecto:</p>
+<pre class="hljs"><code><div>git config pull.rebase <span class="hljs-literal">false</span>   <span class="hljs-comment"># Hacer siempre merge</span>
+git config pull.rebase <span class="hljs-literal">true</span>    <span class="hljs-comment"># Hacer siempre rebase</span>
 </div></code></pre>
 <hr>
 <h2 id="%F0%9F%AA%84-modificar-y-deshacer-cambios">🪄 Modificar y deshacer cambios</h2>
