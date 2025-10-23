@@ -132,11 +132,12 @@ Si hacemos "git pull" git no va a preguntar cómo queremos fusionar los cambios,
 
 ```bash
 git pull --no-rebase
-
           D         # Commits repositorio local
          /
 A --- B --- C       # Commits repositorio remoto
-                   M  (merge commit)  # Nuevo merge commit
+         \
+          M  (merge commit)  # Nuevo merge commit
+
 ```
 
 **Pros**: No se modifican los commits, seguro para ramas compartidas.  
@@ -147,7 +148,7 @@ A --- B --- C       # Commits repositorio remoto
 ```bash
 git pull --rebase
 
-A --- B --- C --- D'    # D' es el commit local, "rebased" con C
+A --- B --- C --- D    # D es el commit local, "rebased" con C
 ```
 
 **Pros**: Limpio, historial lineal, fácil de leer.  
