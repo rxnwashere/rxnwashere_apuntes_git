@@ -261,7 +261,7 @@ También veremos una notificación avisando de las ramas que han tenido pushes r
 
 Presionaremos <code>Compare & Pull Request</code> para comprobar los cambios y fusionar ambas ramas:
 
-![Cambios entre ficheros](imgs/pullreq2.png.png)
+![Cambios entre ficheros](imgs/pullreq2.png)
 
 Añadimos un nombre a nuestra request (puede coger el nombre de nuestro último commit en la rama a fusionar):
 
