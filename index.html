@@ -366,40 +366,41 @@ code {
     });
   </script>
 <h1 id="%F0%9F%A7%A0-apuntes-de-git-y-github">🧠 Apuntes de <strong>Git</strong> y <strong>GitHub</strong></h1>
-
-<h2>📑 Contenidos</h2>
+<h2 id="%F0%9F%93%91-contenidos">📑 Contenidos</h2>
 <ol>
-  <li><a href="#%F0%9F%A7%A9-%C2%BFqu%C3%A9-es-git">🧩 ¿Qué es Git?</a></li>
-  <li><a href="#%F0%9F%94%84-ciclo-de-vida-de-los-archivos-en-git">🔄 Ciclo de vida de los archivos en Git</a>
-    <ul>
-      <li><a href="#%F0%9F%93%8A-fases-principales">📊 Fases principales</a></li>
-    </ul>
-  </li>
-  <li><a href="#%E2%9A%99%EF%B8%8F-configuraci%C3%B3n-inicial">⚙️ Configuración inicial</a></li>
-  <li><a href="#%F0%9F%97%82%EF%B8%8F-crear-y-gestionar-repositorios">🗂️ Crear y gestionar repositorios</a></li>
-  <li><a href="#%F0%9F%93%81-flujo-de-trabajo-completo">📁 Flujo de trabajo completo</a>
-    <ul>
-      <li><a href="#1%EF%B8%8F%E2%83%A3-working-directory-%E2%86%92-staging-area">1️⃣ Working Directory → Staging Area</a></li>
-      <li><a href="#2%EF%B8%8F%E2%83%A3-staging-area-%E2%86%92-repository-commit">2️⃣ Staging Area → Repository (commit)</a></li>
-      <li><a href="#3%EF%B8%8F%E2%83%A3-repository-%E2%86%92-remote-repository">3️⃣ Repository → Remote Repository</a></li>
-      <li><a href="#4%EF%B8%8F%E2%83%A3-remote-repository-%E2%86%92-repository">4️⃣ Remote Repository → Repository</a></li>
-    </ul>
-  </li>
-  <li><a href="#%F0%9F%AA%84-modificar-y-deshacer-cambios">🪄 Modificar y deshacer cambios</a></li>
-  <li><a href="#%F0%9F%8C%BF-ramas-branches">🌿 Ramas (branches)</a></li>
-  <li><a href="#%E2%98%81%EF%B8%8F-remotos-github-y-otros">☁️ Remotos (GitHub y otros)</a></li>
-  <li><a href="#%F0%9F%94%8D-comparar-y-revisar-cambios">🔍 Comparar y revisar cambios</a></li>
-  <li><a href="#%F0%9F%94%A7-ignorar-archivos">🔧 Ignorar archivos</a></li>
-  <li><a href="#%F0%9F%92%A1-flujo-de-trabajo-t%C3%ADpico">💡 Flujo de trabajo típico</a></li>
-  <li><a href="#%F0%9F%A7%B0-comandos-%C3%BAtiles">🧰 Comandos útiles</a></li>
-  <li><a href="#%F0%9F%94%90-ssh-con-github">🔐 SSH con GitHub</a></li>
-  <li><a href="#%F0%9F%93%9A-recursos-recomendados">📚 Recursos recomendados</a></li>
+<li><a href="#que-es-git">🧩 ¿Qué es Git?</a></li>
+<li><a href="#ciclo-de-vida-de-los-archivos-en-git">🔄 Ciclo de vida de los archivos en Git</a>
+<ul>
+<li><a href="#fases-principales">📊 Fases principales</a></li>
+</ul>
+</li>
+<li><a href="#configuracion-inicial">⚙️ Configuración inicial</a></li>
+<li><a href="#crear-y-gestionar-repositorios">🗂️ Crear y gestionar repositorios</a></li>
+<li><a href="#flujo-de-trabajo-completo">📁 Flujo de trabajo completo</a>
+<ul>
+<li><a href="#working-directory--staging-area">1️⃣ Working Directory → Staging Area</a></li>
+<li><a href="#staging-area--repository-commit">2️⃣ Staging Area → Repository (commit)</a></li>
+<li><a href="#repository--remote-repository">3️⃣ Repository → Remote Repository</a></li>
+<li><a href="#remote-repository--repository">4️⃣ Remote Repository → Repository</a></li>
+</ul>
+</li>
+<li><a href="#modificar-y-deshacer-cambios">🪄 Modificar y deshacer cambios</a></li>
+<li><a href="#ramas-branches">🌿 Ramas (branches)</a></li>
+<li><a href="#remotos-github-y-otros">☁️ Remotos (GitHub y otros)</a></li>
+<li><a href="#comparar-y-revisar-cambios">🔍 Comparar y revisar cambios</a></li>
+<li><a href="#ignorar-archivos">🔧 Ignorar archivos</a></li>
+<li><a href="#flujo-de-trabajo-t%C3%ADpico">💡 Flujo de trabajo típico</a></li>
+<li><a href="#comandos-utiles">🧰 Comandos útiles</a></li>
+<li><a href="#ssh-con-github">🔐 SSH con GitHub</a></li>
+<li><a href="#recursos-recomendados">📚 Recursos recomendados</a></li>
 </ol>
-
+<hr>
+<p><a id="que-es-git"></a></p>
 <h2 id="%F0%9F%A7%A9-%C2%BFqu%C3%A9-es-git">🧩 ¿Qué es Git?</h2>
 <p><strong>Git</strong> es un sistema de control de versiones distribuido.<br>
 Permite registrar los cambios realizados en un proyecto, volver a versiones anteriores, trabajar en equipo y fusionar código fácilmente.</p>
 <hr>
+<p><a id="ciclo-de-vida-de-los-archivos-en-git"></a></p>
 <h2 id="%F0%9F%94%84-ciclo-de-vida-de-los-archivos-en-git">🔄 Ciclo de vida de los archivos en Git</h2>
 <p>Git maneja <strong>cuatro estados principales</strong> en los que puede estar un archivo:</p>
 <table>
@@ -428,6 +429,7 @@ Permite registrar los cambios realizados en un proyecto, volver a versiones ante
 </tr>
 </tbody>
 </table>
+<p><a id="fases-principales"></a></p>
 <h3 id="%F0%9F%93%8A-fases-principales">📊 Fases principales</h3>
 <pre class="hljs"><code><div>[ Working Directory ] → git add → [ Staging Area ] → git commit → [ Local Repository ] → git push → [ Remote Repository (GitHub) ]
 </div></code></pre>
@@ -438,6 +440,7 @@ Permite registrar los cambios realizados en un proyecto, volver a versiones ante
 <li><strong>Remote Repository</strong>: copia del repo en un servidor (GitHub, GitLab, etc.).</li>
 </ul>
 <hr>
+<p><a id="configuracion-inicial"></a></p>
 <h2 id="%E2%9A%99%EF%B8%8F-configuraci%C3%B3n-inicial">⚙️ Configuración inicial</h2>
 <pre class="hljs"><code><div>git config --global user.name <span class="hljs-string">"Tu Nombre"</span>
 git config --global user.email <span class="hljs-string">"tuemail@example.com"</span>
@@ -446,27 +449,33 @@ git config --global --edit <span class="hljs-comment"># Abrir configuración glo
 git config --global core.editor <span class="hljs-string">"nano"</span> <span class="hljs-comment"># Configurar editor por defecto (cambia nano por vscode o el editor de tu elección)</span>
 </div></code></pre>
 <hr>
+<p><a id="crear-y-gestionar-repositorios"></a></p>
 <h2 id="%F0%9F%97%82%EF%B8%8F-crear-y-gestionar-repositorios">🗂️ Crear y gestionar repositorios</h2>
 <pre class="hljs"><code><div>git init                      <span class="hljs-comment"># Inicia un nuevo repositorio en la carpeta actual</span>
 git <span class="hljs-built_in">clone</span> &lt;URL&gt;               <span class="hljs-comment"># Clona un repositorio existente (de GitHub u otro servidor)</span>
 </div></code></pre>
 <hr>
+<p><a id="flujo-de-trabajo-completo"></a></p>
 <h2 id="%F0%9F%93%81-flujo-de-trabajo-completo">📁 Flujo de trabajo completo</h2>
+<p><a id="working-directory--staging-area"></a></p>
 <h3 id="1%EF%B8%8F%E2%83%A3-working-directory-%E2%86%92-staging-area">1️⃣ Working Directory → Staging Area</h3>
 <p>Añadimos archivos a la zona de preparación.</p>
 <pre class="hljs"><code><div>git add &lt;archivo&gt;             <span class="hljs-comment"># Añadir un archivo</span>
 git add .                     <span class="hljs-comment"># Añadir todos los cambios</span>
 git status                    <span class="hljs-comment"># Ver el estado actual de los archivos en el repositorio</span>
 </div></code></pre>
+<p><a id="staging-area--repository-commit"></a></p>
 <h3 id="2%EF%B8%8F%E2%83%A3-staging-area-%E2%86%92-repository-commit">2️⃣ Staging Area → Repository (commit)</h3>
 <p>Guardamos los cambios en la base de datos local de Git.</p>
 <pre class="hljs"><code><div>git commit -m <span class="hljs-string">"Mensaje del commit"</span>   <span class="hljs-comment"># Confirmar los cambios preparados. También podemos hacer git commit sin el parámetro -m, pero en lugar de hacer el commit con el mensaje directamente nos abrirá el editor por defecto que hayamos configurado.</span>
 </div></code></pre>
+<p><a id="repository--remote-repository"></a></p>
 <h3 id="3%EF%B8%8F%E2%83%A3-repository-%E2%86%92-remote-repository">3️⃣ Repository → Remote Repository</h3>
 <p>Subimos nuestros commits al servidor remoto (GitHub).</p>
 <pre class="hljs"><code><div>git push origin main                 <span class="hljs-comment"># Subir cambios a la rama main</span>
 git push --<span class="hljs-built_in">set</span>-upstream origin main  <span class="hljs-comment"># Primera vez, vincula la rama local con la remota</span>
 </div></code></pre>
+<p><a id="remote-repository--repository"></a></p>
 <h3 id="4%EF%B8%8F%E2%83%A3-remote-repository-%E2%86%92-repository">4️⃣ Remote Repository → Repository</h3>
 <p>Descargamos o actualizamos los cambios remotos.</p>
 <pre class="hljs"><code><div>git pull origin main                 <span class="hljs-comment"># Descargar y fusionar cambios</span>
@@ -475,12 +484,10 @@ git fetch                            <span class="hljs-comment"># Descargar sin 
 <p>En caso que el repositorio remoto este &quot;1 commit behind&quot; del repositorio local (Siguiente ejemplo);</p>
 <pre class="hljs"><code><div>origin/main:  A --- B --- C   <span class="hljs-comment"># Commits repositorio remoto</span>
 <span class="hljs-built_in">local</span>/main:   A --- B --- D   <span class="hljs-comment"># Commits repositorio local</span>
-
 </div></code></pre>
-<p>Si hacemos &quot;git pull&quot; git no va a preguntar como queremos fusionar los cambios, tenemos dos opciones:</p>
+<p>Si hacemos &quot;git pull&quot; git no va a preguntar cómo queremos fusionar los cambios, tenemos dos opciones:</p>
 <p>1 - Crear un &quot;merge commit&quot; que combina el repositorio local con el repositorio remoto.</p>
 <pre class="hljs"><code><div>git pull --no-rebase
-
           D         <span class="hljs-comment"># Commits repositorio local</span>
          /
 A --- B --- C       <span class="hljs-comment"># Commits repositorio remoto</span>
@@ -488,21 +495,21 @@ A --- B --- C       <span class="hljs-comment"># Commits repositorio remoto</spa
           M  (merge commit)  <span class="hljs-comment"># Nuevo merge commit</span>
 
 </div></code></pre>
-<p><strong>Pros</strong>: No se modifican los commits, seguro para brancas compartidas.<br>
-<strong>Cons</strong>: Crea &quot;merge commits&quot; adicionales, el historial puede parecer mas caotico.</p>
-<p>2 - Git fusiona los cambios i crea un nuevo commit, haciendo el historial linear.</p>
+<p><strong>Pros</strong>: No se modifican los commits, seguro para ramas compartidas.<br>
+<strong>Cons</strong>: Crea &quot;merge commits&quot; adicionales, el historial puede parecer más caótico.</p>
+<p>2 - Git fusiona los cambios y crea un nuevo commit, haciendo el historial lineal.</p>
 <pre class="hljs"><code><div>git pull --rebase
 
-A --- B --- C --- D'    # D' es el commit local, &quot;rebased&quot; con C
-
+A --- B --- C --- D    <span class="hljs-comment"># D es el commit local, "rebased" con C</span>
 </div></code></pre>
-<p><strong>Pros</strong>: Limpio, historial linear, facil de leer.<br>
-<strong>Cons</strong>: Reescribe los ID's de los commits, no es seguro para brancas compartidas.</p>
-<p>Si no queremos que git nos avise cada vez que nos encontramos en esta situacion, podemos configurar el comportamiento por defecto:</p>
+<p><strong>Pros</strong>: Limpio, historial lineal, fácil de leer.<br>
+<strong>Cons</strong>: Reescribe los ID's de los commits, no es seguro para ramas compartidas.</p>
+<p>Si no queremos que git nos avise cada vez que nos encontramos en esta situación, podemos configurar el comportamiento por defecto:</p>
 <pre class="hljs"><code><div>git config pull.rebase <span class="hljs-literal">false</span>   <span class="hljs-comment"># Hacer siempre merge</span>
 git config pull.rebase <span class="hljs-literal">true</span>    <span class="hljs-comment"># Hacer siempre rebase</span>
 </div></code></pre>
 <hr>
+<p><a id="modificar-y-deshacer-cambios"></a></p>
 <h2 id="%F0%9F%AA%84-modificar-y-deshacer-cambios">🪄 Modificar y deshacer cambios</h2>
 <pre class="hljs"><code><div>git restore --staged &lt;archivo&gt;   <span class="hljs-comment"># Quitar un archivo del área de stage</span>
 git restore &lt;archivo&gt;            <span class="hljs-comment"># Deshacer cambios en el working directory</span>
@@ -510,10 +517,14 @@ git revert &lt;id_commit&gt;           <span class="hljs-comment"># Crear un com
 git reset --hard &lt;id_commit&gt;     <span class="hljs-comment"># Volver el repo a un commit anterior (borra cambios)</span>
 </div></code></pre>
 <hr>
+<p><a id="ramas-branches"></a></p>
 <h2 id="%F0%9F%8C%BF-ramas-branches">🌿 Ramas (branches)</h2>
 <pre class="hljs"><code><div>git branch                       <span class="hljs-comment"># Ver ramas</span>
+git branch -r                    <span class="hljs-comment"># Ver ramas remotas</span>
+git branch -a                    <span class="hljs-comment"># Ver ramas locales y remotas</span>
 
 git branch &lt;nombre&gt;              <span class="hljs-comment"># Crear una rama</span>
+git branch -d &lt;nombre&gt;           <span class="hljs-comment"># Borrar una rama</span>
 
 git switch &lt;nombre&gt;              <span class="hljs-comment"># Cambiar de rama</span>
 git checkout &lt;nombre&gt;
@@ -524,9 +535,9 @@ git checkout -b &lt;nombre&gt;
 git merge &lt;nombre&gt;               <span class="hljs-comment"># Fusionar una rama con la actual. No genera commit de merge, solo mueve el puntero de la rama hacia delante</span>
 git merge &lt;nombre&gt; --no-ff       <span class="hljs-comment"># Fusiona una rama con la actual pero forzando dejar un commit de merge. --no-ff significa "No fast forward".</span>
 git merge &lt;nombre&gt; --allow-unrelated-histories <span class="hljs-comment"># Fusionar una rama sin cambios relacionados con la actual</span>
-git branch -d &lt;nombre&gt;           <span class="hljs-comment"># Borrar una rama</span>
 </div></code></pre>
 <hr>
+<p><a id="remotos-github-y-otros"></a></p>
 <h2 id="%E2%98%81%EF%B8%8F-remotos-github-y-otros">☁️ Remotos (GitHub y otros)</h2>
 <pre class="hljs"><code><div>git remote add origin &lt;URL HTTP&gt; / &lt;URL SSH&gt; <span class="hljs-comment"># Conectar el repo local a uno remoto</span>
 git remote -v                    <span class="hljs-comment"># Ver los remotos configurados</span>
@@ -535,6 +546,7 @@ git pull                         <span class="hljs-comment"># Bajar y fusionar c
 git fetch                        <span class="hljs-comment"># Descargar sin fusionar</span>
 </div></code></pre>
 <hr>
+<p><a id="comparar-y-revisar-cambios"></a></p>
 <h2 id="%F0%9F%94%8D-comparar-y-revisar-cambios">🔍 Comparar y revisar cambios</h2>
 <pre class="hljs"><code><div>git diff                         <span class="hljs-comment"># Ver diferencias entre archivos</span>
 git diff &lt;commit1&gt; &lt;commit2&gt;     <span class="hljs-comment"># Comparar commits</span>
@@ -542,6 +554,7 @@ git <span class="hljs-built_in">log</span> --oneline --graph --all  <span class=
 git blame &lt;archivo&gt;              <span class="hljs-comment"># Ver quién cambió cada línea</span>
 </div></code></pre>
 <hr>
+<p><a id="ignorar-archivos"></a></p>
 <h2 id="%F0%9F%94%A7-ignorar-archivos">🔧 Ignorar archivos</h2>
 <p>Archivo <code>.gitignore</code>:</p>
 <pre class="hljs"><code><div># Carpetas
@@ -553,6 +566,7 @@ dist/
 .env
 </div></code></pre>
 <hr>
+<p><a id="flujo-de-trabajo-típico"></a></p>
 <h2 id="%F0%9F%92%A1-flujo-de-trabajo-t%C3%ADpico">💡 Flujo de trabajo típico</h2>
 <pre class="hljs"><code><div>git <span class="hljs-built_in">clone</span> &lt;url&gt;
 git checkout -b feature/nueva-funcionalidad
@@ -579,12 +593,14 @@ git push origin feature/nueva-funcionalidad
 <p><img src="imgs/pullreq6.png" alt="Pull request exitosa"></p>
 <p><img src="imgs/pullreq7.png" alt="Cambios después del merge"></p>
 <hr>
+<p><a id="comandos-utiles"></a></p>
 <h2 id="%F0%9F%A7%B0-comandos-%C3%BAtiles">🧰 Comandos útiles</h2>
 <pre class="hljs"><code><div>git <span class="hljs-built_in">log</span> --oneline                <span class="hljs-comment"># Ver historial corto</span>
 git reflog                       <span class="hljs-comment"># Ver todos los movimientos de HEAD</span>
 git clean -f                     <span class="hljs-comment"># Borrar archivos no rastreados</span>
 </div></code></pre>
 <hr>
+<p><a id="ssh-con-github"></a></p>
 <h2 id="%F0%9F%94%90-ssh-con-github">🔐 SSH con GitHub</h2>
 <pre class="hljs"><code><div>ssh-keygen -t ed25519 -C <span class="hljs-string">"tuemail@example.com"</span>
 cat ~/.ssh/id_ed25519.pub
@@ -593,6 +609,7 @@ cat ~/.ssh/id_ed25519.pub
 <p><img src="https://github.com/settings/keys" alt="Settings (configuración de tu cuenta de GitHub) --&gt; SSH and GPG Keys"></p>
 <p><img src="imgs/sshkeys.png" alt="Menú para añadir clave SSH pública"></p>
 <hr>
+<p><a id="recursos-recomendados"></a></p>
 <h2 id="%F0%9F%93%9A-recursos-recomendados">📚 Recursos recomendados</h2>
 <ul>
 <li><a href="https://git-scm.com/book/es/v2">Pro Git Book (en español)</a></li>

@@ -180,8 +180,11 @@ git reset --hard <id_commit>     # Volver el repo a un commit anterior (borra ca
 
 ```bash
 git branch                       # Ver ramas
+git branch -r                    # Ver ramas remotas
+git branch -a                    # Ver ramas locales y remotas
 
 git branch <nombre>              # Crear una rama
+git branch -d <nombre>           # Borrar una rama
 
 git switch <nombre>              # Cambiar de rama
 git checkout <nombre>
@@ -192,7 +195,6 @@ git checkout -b <nombre>
 git merge <nombre>               # Fusionar una rama con la actual. No genera commit de merge, solo mueve el puntero de la rama hacia delante
 git merge <nombre> --no-ff       # Fusiona una rama con la actual pero forzando dejar un commit de merge. --no-ff significa "No fast forward".
 git merge <nombre> --allow-unrelated-histories # Fusionar una rama sin cambios relacionados con la actual
-git branch -d <nombre>           # Borrar una rama
 ```
 
 ---
